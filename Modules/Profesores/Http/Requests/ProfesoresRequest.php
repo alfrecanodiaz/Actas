@@ -23,6 +23,10 @@ class ProfesoresRequest extends FormRequest {
 	{
 		return [
 			'nombre' => 'required',
+			'codigo' => 'required',
+			'username' => 'required',
+			'email' => 'required',
+			'password' => 'required',
 		];
 	}
 

@@ -28,7 +28,7 @@ class ProfesoresController extends AdminBaseController
      */
     public function index()
     {
-        $profesores = Profesores::orderBy('nombre')->get();
+        $profesores = Profesores::orderBy('id')->get();
 
         return view('profesores::admin.profesores.index', compact('profesores'));
     }
@@ -51,9 +51,25 @@ class ProfesoresController extends AdminBaseController
      */
     public function store(ProfesoresRequest $request)
     {
-        $profesores = $this->profesores->create($request->all());
 
-        flash()->success(trans('core::core.messages.resource created', ['name' => trans('profesores::profesores.title.profesores')]));
+        try {
+
+            $profesores = $this->profesores->create($request->all());
+            flash()->success(trans('core::core.messages.resource created', ['name' => trans('profesores::profesores.title.profesores')]));
+        } 
+        catch (\Illuminate\Database\QueryException $e) {
+
+            //23000 sql code for integrity constraint violation
+            if($e->getCode() == "23000"){
+
+                flash()->error('Error al crear profesor, el usuario o correo electrónico ya esta en uso.', ['name' => trans('profesores::profesores.title.profesores')]);
+                //MENSAJE DE ERROR
+            }
+        }
+
+        //$profesores = $this->profesores->create($request->all());
+
+        //flash()->success(trans('core::core.messages.resource created', ['name' => trans('profesores::profesores.title.profesores')]));
 
         return redirect()->route('admin.profesores.profesores.index');
     }
@@ -78,9 +94,25 @@ class ProfesoresController extends AdminBaseController
      */
     public function update(Profesores $profesores, ProfesoresRequest $request)
     {
-        $this->profesores->update($profesores, $request->all());
 
-        flash()->success(trans('core::core.messages.resource updated', ['name' => trans('profesores::profesores.title.profesores')]));
+        try {
+
+            $this->profesores->update($profesores, $request->all());
+            flash()->success(trans('core::core.messages.resource updated', ['name' => trans('profesores::profesores.title.profesores')]));
+        } 
+        catch (\Illuminate\Database\QueryException $e) {
+
+            //23000 sql code for integrity constraint violation
+            if($e->getCode() == "23000"){
+
+                flash()->error('Error al crear profesor, el usuario o correo electrónico ya esta en uso.', ['name' => trans('profesores::profesores.title.profesores')]);
+                //MENSAJE DE ERROR
+            }
+        }
+
+        //$this->profesores->update($profesores, $request->all());
+
+        //flash()->success(trans('core::core.messages.resource updated', ['name' => trans('profesores::profesores.title.profesores')]));
 
         return redirect()->route('admin.profesores.profesores.index');
     }

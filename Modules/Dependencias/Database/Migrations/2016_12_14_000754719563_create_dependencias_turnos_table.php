@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlumnosAlumnosTable extends Migration
+class CreateDependenciasTurnosTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,10 +12,10 @@ class CreateAlumnosAlumnosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('alumnos__alumnos', function(Blueprint $table) {
+		Schema::create('dependencias__turnos', function(Blueprint $table) {
 			$table->engine = 'InnoDB';
             $table->increments('id');
-            // Your fields
+            $table->string('turnos');
             $table->timestamps();
 		});
 	}
@@ -27,6 +27,6 @@ class CreateAlumnosAlumnosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('alumnos__alumnos');
+		Schema::drop('dependencias__turnos');
 	}
 }

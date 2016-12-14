@@ -31,17 +31,45 @@
 
               <div class="shortcuts"> 
 
-                <a href="javascript:;" class="shortcut">
+                <a href="#" class="shortcut">
                 <i class="shortcut-icon icon-file"></i>
-                <span class="shortcut-label">Acta</span></a>
+                <span class="shortcut-label">Ver Acta</span></a>
+
+                <a href="#" class="shortcut">
+                <i class="shortcut-icon icon-file"></i>
+                <span class="shortcut-label">Crear Acta</span></a>
+
+                <a href="#" class="shortcut">
+                <i class="shortcut-icon icon-file"></i>
+                <span class="shortcut-label">Actualizar Acta</span></a>
+
+              </div>
+              <!-- /shortcuts --> 
+            </div>
+            <!-- /widget-content --> 
+          </div>
+          <!-- /widget -->
+
+          <div class="widget">
+            <div class="widget-header"> <i class="icon-bookmark"></i>
+              <h3>Panel de Consultas</h3>
+            </div>
+            <!-- /widget-header -->
+            <div class="widget-content">
+
+              <div class="shortcuts"> 
 
                 <a href="{{ (url('formCalificacion')) }}" class="shortcut">
                 <i class="shortcut-icon icon-list-alt"></i>
-                <span class="shortcut-label">Calificación</span></a>
+                <span class="shortcut-label">Materias</span></a>
 
-                <a href="javascript:;" class="shortcut">
+                <a href="{{ (url('query')).'/?curso_profesor='.$keylogin }}" class="shortcut">
+                <i class="shortcut-icon icon-list-alt"></i>
+                <span class="shortcut-label">Cursos</span></a>
+
+                <a href="#" class="shortcut">
                 <i class="shortcut-icon icon-user"></i>
-                <span class="shortcut-label">Profesor</span></a>
+                <span class="shortcut-label">Alumnos</span></a>
 
               </div>
               <!-- /shortcuts --> 

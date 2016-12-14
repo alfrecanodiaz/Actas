@@ -45,7 +45,20 @@ class AlumnosServiceProvider extends ServiceProvider
                 return new \Modules\Alumnos\Repositories\Cache\CacheAlumnosDecorator($repository);
             }
         );
+        $this->app->bind(
+            'Modules\Alumnos\Repositories\InscripcionesRepository',
+            function () {
+                $repository = new \Modules\Alumnos\Repositories\Eloquent\EloquentInscripcionesRepository(new \Modules\Alumnos\Entities\Inscripciones());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new \Modules\Alumnos\Repositories\Cache\CacheInscripcionesDecorator($repository);
+            }
+        );
 // add bindings
+
 
     }
 }

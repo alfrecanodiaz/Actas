@@ -9,7 +9,7 @@ class Profesores extends Model
 
     protected $table = 'profesores__profesores';
     public $translatedAttributes = [];
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre','username','email','password','codigo'];
 
     public function cursos()
     {

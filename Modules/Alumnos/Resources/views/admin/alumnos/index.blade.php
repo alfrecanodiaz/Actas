@@ -28,7 +28,9 @@
                     <table class="data-table table table-bordered table-hover">
                         <thead>
                         <tr>
-                            <th>{{ trans('core::core.table.created at') }}</th>
+                            <th>{{ trans('ID') }}</th>
+                            <th>{{ trans('Nombre') }}</th>
+                            <th>{{ trans('CI') }}</th>
                             <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                         </tr>
                         </thead>
@@ -38,7 +40,17 @@
                         <tr>
                             <td>
                                 <a href="{{ route('admin.alumnos.alumnos.edit', [$alumnos->id]) }}">
-                                    {{ $alumnos->created_at }}
+                                    {{ $alumnos->id }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ route('admin.alumnos.alumnos.edit', [$alumnos->id]) }}">
+                                    {{ $alumnos->nombre }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ route('admin.alumnos.alumnos.edit', [$alumnos->id]) }}">
+                                    {{ $alumnos->codigo }}
                                 </a>
                             </td>
                             <td>
@@ -53,7 +65,9 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th>{{ trans('core::core.table.created at') }}</th>
+                            <th>{{ trans('ID') }}</th>
+                            <th>{{ trans('Nombre') }}</th>
+                            <th>{{ trans('CI') }}</th>
                             <th>{{ trans('core::core.table.actions') }}</th>
                         </tr>
                         </tfoot>

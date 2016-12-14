@@ -58,7 +58,7 @@
                     <div class="control-group">                     
                       <label class="control-label" for="firstname">Calificación</label>
                       <div class="controls">
-                        <input type="text" class="span2" id="firstname" value="">
+                        <input type="text" class="span2" id="firstname" value="" placeholder="Primer parcial">
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     
@@ -104,7 +104,7 @@
                     <div class="control-group">                     
                       <label class="control-label" for="firstname">Calificación</label>
                       <div class="controls">
-                        <input type="text" class="span2" id="firstname" value="">
+                        <input type="text" class="span2" id="firstname" value="" placeholder="Segundo parcial">
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     
@@ -151,7 +151,7 @@
                     <div class="control-group">                     
                       <label class="control-label" for="firstname">Calificación</label>
                       <div class="controls">
-                        <input type="text" class="span2" id="firstname" value="">
+                        <input type="text" class="span2" id="firstname" value="" placeholder="Tercer parcial">
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     
@@ -197,7 +197,7 @@
                     <div class="control-group">                     
                       <label class="control-label" for="firstname">Calificación</label>
                       <div class="controls">
-                        <input type="text" class="span2" id="firstname" value="">
+                        <input type="text" class="span2" id="firstname" value="" placeholder="Final">
                       </div> <!-- /controls -->       
                     </div> <!-- /control-group -->
                     

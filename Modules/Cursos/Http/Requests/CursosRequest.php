@@ -22,8 +22,13 @@ class CursosRequest extends FormRequest {
 	public function rules()
 	{
 		return [
-			'temporada' => 'required',
           	'materia_id' => 'required',
+          	'profesor_id' => 'required',
+          	'aula_id' => 'required',
+          	'turno_id' => 'required',
+          	'seccion_id' => 'required',
+          	'convocatoria_id' => 'required',
+          	'semestre_id' => 'required',
 		];
 	}
 

@@ -1,4 +1,4 @@
-<div class="navbar navbar-fixed-top">
+<div id="navegador-principal" class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container"> <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
                     class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span> </a><a class="brand" href="index.html">Gestión de Actas de Notas</a>
@@ -7,8 +7,9 @@
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
                             class="icon-cog"></i> Cuenta <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="javascript:;">Configuración</a></li>
-              <li><a href="javascript:;">Ayuda</a></li>
+              <li><a href="{{ (url('/')) }}">Cerrar Sesión</a></li>
+              <!--<li><a href="javascript:;">Configuración</a></li>
+              <li><a href="javascript:;">Ayuda</a></li>-->
             </ul>
           </li>
           <!--<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
@@ -30,7 +31,7 @@
   <!-- /navbar-inner --> 
 </div>
 <!-- /navbar -->
-<div class="subnavbar">
+<div id="sub-navegador" class="subnavbar">
   <div class="subnavbar-inner">
     <div class="container">
       <ul class="mainnav">

@@ -29,9 +29,10 @@
                         <thead>
                         <tr>
                             <th>{{ trans('ID') }}</th>
-                            <th>{{ trans('Temporada') }}</th>
                             <th>{{ trans('Materia') }}</th>
                             <th>{{ trans('Profesor') }}</th>
+                            <th>{{ trans('Convocatoria') }}</th>
+                            <th>{{ trans('Semestre') }}</th>
                             <th data-sortable="false">{{ trans('core::core.table.actions') }}</th>
                         </tr>
                         </thead>
@@ -46,17 +47,22 @@
                             </td>
                             <td>
                                 <a href="{{ route('admin.cursos.cursos.edit', [$cursos->id]) }}">
-                                    {{ $cursos->temporada }}
-                                </a>
-                            </td>
-                            <td>
-                                <a href="{{ route('admin.cursos.cursos.edit', [$cursos->id]) }}">
                                     {{ $cursos->materias->nombre }}
                                 </a>
                             </td>
                             <td>
                                 <a href="{{ route('admin.cursos.cursos.edit', [$cursos->id]) }}">
                                     {{ $cursos->profesores->nombre }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ route('admin.cursos.cursos.edit', [$cursos->id]) }}">
+                                    {{ $cursos->convocatorias->convocatoria }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{{ route('admin.cursos.cursos.edit', [$cursos->id]) }}">
+                                    {{ $cursos->semestres->semestre }}
                                 </a>
                             </td>
                             <td>
@@ -74,6 +80,7 @@
                             <th>{{ trans('ID') }}</th>
                             <th>{{ trans('Temporada') }}</th>
                             <th>{{ trans('Materia') }}</th>
+                            <th>{{ trans('Profesor') }}</th>
                             <th>{{ trans('Profesor') }}</th>
                             <th>{{ trans('core::core.table.actions') }}</th>
                         </tr>

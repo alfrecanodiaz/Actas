@@ -37,6 +37,40 @@ $router->group(['prefix' =>'/alumnos'], function (Router $router) {
         'uses' => 'AlumnosController@destroy',
         'middleware' => 'can:alumnos.alumnos.destroy'
     ]);
+    $router->bind('inscripciones', function ($id) {
+        return app('Modules\Alumnos\Repositories\InscripcionesRepository')->find($id);
+    });
+    $router->get('inscripciones', [
+        'as' => 'admin.alumnos.inscripciones.index',
+        'uses' => 'InscripcionesController@index',
+        'middleware' => 'can:alumnos.inscripciones.index'
+    ]);
+    $router->get('inscripciones/create', [
+        'as' => 'admin.alumnos.inscripciones.create',
+        'uses' => 'InscripcionesController@create',
+        'middleware' => 'can:alumnos.inscripciones.create'
+    ]);
+    $router->post('inscripciones', [
+        'as' => 'admin.alumnos.inscripciones.store',
+        'uses' => 'InscripcionesController@store',
+        'middleware' => 'can:alumnos.inscripciones.store'
+    ]);
+    $router->get('inscripciones/{inscripciones}/edit', [
+        'as' => 'admin.alumnos.inscripciones.edit',
+        'uses' => 'InscripcionesController@edit',
+        'middleware' => 'can:alumnos.inscripciones.edit'
+    ]);
+    $router->put('inscripciones/{inscripciones}', [
+        'as' => 'admin.alumnos.inscripciones.update',
+        'uses' => 'InscripcionesController@update',
+        'middleware' => 'can:alumnos.inscripciones.update'
+    ]);
+    $router->delete('inscripciones/{inscripciones}', [
+        'as' => 'admin.alumnos.inscripciones.destroy',
+        'uses' => 'InscripcionesController@destroy',
+        'middleware' => 'can:alumnos.inscripciones.destroy'
+    ]);
 // append
+
 
 });

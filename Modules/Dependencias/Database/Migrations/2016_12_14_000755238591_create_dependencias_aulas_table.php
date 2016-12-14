@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCursosCursosTable extends Migration
+class CreateDependenciasAulasTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,12 +12,10 @@ class CreateCursosCursosTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('cursos__cursos', function(Blueprint $table) {
+		Schema::create('dependencias__aulas', function(Blueprint $table) {
 			$table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('temporada');
-            $table->integer('materia_id')->unsigned();
-            $table->foreign('materia_id')->references('id')->on('materias__materias');
+            $table->integer('aula');
             $table->timestamps();
 		});
 	}
@@ -29,6 +27,6 @@ class CreateCursosCursosTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('cursos__cursos');
+		Schema::drop('dependencias__aulas');
 	}
 }

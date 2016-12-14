@@ -9,5 +9,5 @@ class Alumnos extends Model
 
     protected $table = 'alumnos__alumnos';
     public $translatedAttributes = [];
-    protected $fillable = [];
+    protected $fillable = ['nombre','codigo'];
 }

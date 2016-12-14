@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     @section('meta')
         <meta name="description" content="{{ Setting::get('core::site-description') }}" />
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
     @show
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">

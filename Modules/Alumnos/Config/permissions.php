@@ -9,6 +9,15 @@ return [
         'update',
         'destroy',
     ],
+    'alumnos.inscripciones' => [
+        'index',
+        'create',
+        'store',
+        'edit',
+        'update',
+        'destroy',
+    ],
 // append
+
 
 ];

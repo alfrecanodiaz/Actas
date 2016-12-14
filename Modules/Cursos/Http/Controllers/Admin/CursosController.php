@@ -7,6 +7,11 @@ use Modules\Cursos\Repositories\CursosRepository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Materias\Entities\Materias;
 use Modules\Profesores\Entities\Profesores;
+use Modules\Dependencias\Entities\Aulas;
+use Modules\Dependencias\Entities\Turnos;
+use Modules\Dependencias\Entities\Secciones;
+use Modules\Semestres\Entities\Convocatorias;
+use Modules\Semestres\Entities\Semestres;
 use Modules\Cursos\Http\Requests\CursosRequest;
 
 class CursosController extends AdminBaseController
@@ -44,8 +49,13 @@ class CursosController extends AdminBaseController
     {
         $materias=Materias::orderBy('nombre')->lists('nombre','id')->all();
         $profesores=Profesores::orderBy('nombre')->lists('nombre','id')->all();
+        $aulas=Aulas::orderBy('aula')->lists('aula','id')->all();
+        $secciones=Secciones::orderBy('seccion')->lists('seccion','id')->all();
+        $turnos=Turnos::orderBy('turnos')->lists('turnos','id')->all();
+        $convocatorias=Convocatorias::orderBy('convocatoria')->lists('convocatoria','id')->all();
+        $semestres=Semestres::orderBy('semestre')->lists('semestre','id')->all();
 
-        return view('cursos::admin.cursos.create',compact('materias','profesores'));
+        return view('cursos::admin.cursos.create',compact('materias','profesores','aulas','secciones','turnos','convocatorias','semestres'));
     }
 
     /**
@@ -73,8 +83,13 @@ class CursosController extends AdminBaseController
     {
         $materias=Materias::orderBy('nombre')->lists('nombre','id')->all();
         $profesores=Profesores::orderBy('nombre')->lists('nombre','id')->all();
+        $aulas=Aulas::orderBy('aula')->lists('aula','id')->all();
+        $secciones=Secciones::orderBy('seccion')->lists('seccion','id')->all();
+        $turnos=Turnos::orderBy('turnos')->lists('turnos','id')->all();
+        $convocatorias=Convocatorias::orderBy('convocatoria')->lists('convocatoria','id')->all();
+        $semestres=Semestres::orderBy('semestre')->lists('semestre','id')->all();
 
-        return view('cursos::admin.cursos.edit', compact('cursos','materias','profesores'));
+        return view('cursos::admin.cursos.edit', compact('cursos','materias','profesores','aulas','secciones','turnos','convocatorias','semestres'));
     }
 
     /**

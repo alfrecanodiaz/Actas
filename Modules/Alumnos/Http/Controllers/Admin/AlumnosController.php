@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Modules\Alumnos\Entities\Alumnos;
 use Modules\Alumnos\Repositories\AlumnosRepository;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
+use Modules\Alumnos\Http\Requests\AlumnosRequest;
 
 class AlumnosController extends AdminBaseController
 {
@@ -27,9 +28,9 @@ class AlumnosController extends AdminBaseController
      */
     public function index()
     {
-        //$alumnos = $this->alumnos->all();
+        $alumnos = Alumnos::orderBy('id','desc')->get();
 
-        return view('alumnos::admin.alumnos.index', compact(''));
+        return view('alumnos::admin.alumnos.index', compact('alumnos'));
     }
 
     /**
@@ -48,9 +49,9 @@ class AlumnosController extends AdminBaseController
      * @param  Request $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(AlumnosRequest $request)
     {
-        $this->alumnos->create($request->all());
+        $alumnos = $this->alumnos->create($request->all());
 
         flash()->success(trans('core::core.messages.resource created', ['name' => trans('alumnos::alumnos.title.alumnos')]));
 
@@ -75,7 +76,7 @@ class AlumnosController extends AdminBaseController
      * @param  Request $request
      * @return Response
      */
-    public function update(Alumnos $alumnos, Request $request)
+    public function update(Alumnos $alumnos, AlumnosRequest $request)
     {
         $this->alumnos->update($alumnos, $request->all());
 

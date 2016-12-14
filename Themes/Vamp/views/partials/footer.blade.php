@@ -1,4 +1,4 @@
-<div class="extra">
+<div id="extra-footer" class="extra">
   <div class="extra-inner">
     <div class="container">
       <div class="row">
@@ -50,7 +50,7 @@
   <!-- /extra-inner --> 
 </div>
 <!-- /extra -->
-<div class="footer">
+<div id="footer" class="footer">
   <div class="footer-inner">
     <div class="container">
       <div class="row">

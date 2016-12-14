@@ -45,7 +45,17 @@ class SidebarExtender implements \Maatwebsite\Sidebar\SidebarExtender
                         $this->auth->hasAccess('alumnos.alumnos.index')
                     );
                 });
+                $item->item(trans('alumnos::inscripciones.title.inscripciones'), function (Item $item) {
+                    $item->icon('fa fa-copy');
+                    $item->weight(0);
+                    $item->append('admin.alumnos.inscripciones.create');
+                    $item->route('admin.alumnos.inscripciones.index');
+                    $item->authorize(
+                        $this->auth->hasAccess('alumnos.inscripciones.index')
+                    );
+                });
 // append
+
 
             });
         });
